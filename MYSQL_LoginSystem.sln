@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D3E0E812-8810-4BB2-9757-0C6621F7A17B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginSystem", "LoginSystem\LoginSystem.csproj", "{2FE734D4-9402-4D61-B49B-1D9C728EA24D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PHP Files", "PHP Files", "{87640E86-D7EA-4874-AC42-754A6AE240DD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\xampp\htdocs\login\activateAccount.php = ..\..\..\..\..\..\xampp\htdocs\login\activateAccount.php
+		..\..\..\..\..\..\xampp\htdocs\login\changePassword.php = ..\..\..\..\..\..\xampp\htdocs\login\changePassword.php
+		..\..\..\..\..\..\xampp\htdocs\login\db.php = ..\..\..\..\..\..\xampp\htdocs\login\db.php
+		..\..\..\..\..\..\xampp\htdocs\login\login.php = ..\..\..\..\..\..\xampp\htdocs\login\login.php
+		..\..\..\..\..\..\xampp\htdocs\login\refreshLogin.php = ..\..\..\..\..\..\xampp\htdocs\login\refreshLogin.php
+		..\..\..\..\..\..\xampp\htdocs\login\register.php = ..\..\..\..\..\..\xampp\htdocs\login\register.php
+		..\..\..\..\..\..\xampp\htdocs\login\resentActivationCode.php = ..\..\..\..\..\..\xampp\htdocs\login\resentActivationCode.php
+		..\..\..\..\..\..\xampp\htdocs\login\test.php = ..\..\..\..\..\..\xampp\htdocs\login\test.php
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3E0E812-8810-4BB2-9757-0C6621F7A17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E0E812-8810-4BB2-9757-0C6621F7A17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E0E812-8810-4BB2-9757-0C6621F7A17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E0E812-8810-4BB2-9757-0C6621F7A17B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE734D4-9402-4D61-B49B-1D9C728EA24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE734D4-9402-4D61-B49B-1D9C728EA24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE734D4-9402-4D61-B49B-1D9C728EA24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE734D4-9402-4D61-B49B-1D9C728EA24D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC77A620-3F24-4842-BBA2-CAC5BF1007CD}
+	EndGlobalSection
+EndGlobal
