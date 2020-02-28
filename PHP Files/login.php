@@ -9,17 +9,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
     $result = mysqli_query($con,$query) or die(mysql_error());
     $rows = mysqli_num_rows($result);
+	$user = mysqli_fetch_assoc($result);
     if($rows==1){
-        //login done
-        $query = "UPDATE users SET coockie='$coockie' WHERE username ='$username'";
-        $result = mysqli_query($con,$query) or die(mysql_error());
-        $jsonResponse = array(
-            "Username"=>$username, 
-            "Coockie"=>$coockie,
-            "Successful"=>true,
-            "Message"=>"User logged-in successfully");
-        echo json_encode($jsonResponse);
-        exit();
+		//Check if account is activated
+		if(user[6] != null)
+		{
+			$jsonResponse = array(
+			    "Username"=>$username, 
+			    "Coockie"=>"",
+			    "Successful"=>false,
+			    "Message"=>"Account is not activated");
+			echo json_encode($jsonResponse);
+			exit();
+		}else
+		{
+			//login done
+			$query = "UPDATE users SET coockie='$coockie' WHERE username ='$username'";
+			$result = mysqli_query($con,$query) or die(mysql_error());
+			$jsonResponse = array(
+			    "Username"=>$username, 
+			    "Coockie"=>$coockie,
+			    "Successful"=>true,
+			    "Message"=>"User logged-in successfully");
+			echo json_encode($jsonResponse);
+			exit();
+		}
     }
     else
     {

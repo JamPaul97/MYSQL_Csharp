@@ -8,16 +8,16 @@ namespace LoginSystem
 {
     public class Connector
     {
-		private string Server = string.Empty;
-		private string Coockie = null;
-		private string emailSubject = string.Empty;
-		private string emailMessage = string.Empty; ////MustContains 'activation_key_placeholder' somewhere
-		private string RegisterURL = "register.php";
-		private string LoginURL = "login.php";
-		private string ChangePasswordURL = "changePassword.php";
-		private string RefreshLoginURL = "refreshLogin.php";
-		private string ActivateAccountURL = "activateAccount.php";
-		private string ResentActivationKeyURL = "resentActivationKey.php";
+		private string Server					= string.Empty;
+		private string Coockie					= null;
+		private string emailSubject				= string.Empty;
+		private string emailMessage				= string.Empty; ////MustContains 'activation_key_placeholder' somewhere
+		private string RegisterURL				= "register.php";
+		private string LoginURL					= "login.php";
+		private string ChangePasswordURL		= "changePassword.php";
+		private string RefreshLoginURL			= "refreshLogin.php";
+		private string ActivateAccountURL		= "activateAccount.php";
+		private string ResentActivationKeyURL	= "resentActivationKey.php";
 		/// <summary>
 		/// Change the Change Password .php name
 		/// </summary>

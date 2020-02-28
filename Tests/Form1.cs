@@ -38,8 +38,7 @@ namespace Tests
 			var response = cn.Login(username_txt.Text, password_txt.Text);
 			if(response.Successful)
 			{
-				this.Text = response.Coockie;
-				this.Refresh();
+				MetroFramework.MetroMessageBox.Show(this,"Login Succefull")
 			}
 			else
 			{
