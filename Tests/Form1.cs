@@ -15,18 +15,22 @@ using LoginSystem;
 
 namespace Tests
 {
-	public partial class Form1 : Form
+	public partial class Form1 : MetroFramework.Forms.MetroForm
 	{
 		public Form1()
 		{
 			InitializeComponent();
 		}
-		LoginSystem.Connector cn = new Connector("http://127.0.0.1/login/","Test registration email",
+		Connector cn = new Connector("http://127.0.0.1/loginSystem/","Test registration email",
 			"Thank you for registaring. Please use this 'activation_key_placeholder' key to activate your account.");
 		private async void Button1_Click(object sender, EventArgs e)
 		{
 			var a = cn.ResentActivationKey("paulosmantziaris@gmail.com");
 		}
-		
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

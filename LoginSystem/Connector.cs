@@ -100,8 +100,8 @@ namespace LoginSystem
 		public Connector(string Server,string emailSubject,string emailMessage)
 		{
 			this.Server = Server;
-			this.EmailMessage = emailSubject;
-			this.EmailSubject = emailMessage;
+			this.EmailMessage = emailMessage;
+			this.EmailSubject = emailSubject;
 		}
 
 		/// <summary>
