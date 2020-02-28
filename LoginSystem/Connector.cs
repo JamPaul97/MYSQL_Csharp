@@ -2,13 +2,13 @@
 using System.Text;
 using System.Net;
 using Newtonsoft.Json;
-using System.IO;    // for StreamReader
+using System.IO;
 
 namespace LoginSystem
 {
     public class Connector
     {
-		private string Server = "http://127.0.0.1/login/";
+		private string Server = string.Empty;
 		private string Coockie = null;
 		private string emailSubject = string.Empty;
 		private string emailMessage = string.Empty; ////MustContains 'activation_key_placeholder' somewhere
