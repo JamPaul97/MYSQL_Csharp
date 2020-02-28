@@ -25,7 +25,7 @@ namespace Tests
 			"Thank you for registaring. Please use this 'activation_key_placeholder' key to activate your account.");
 		private async void Button1_Click(object sender, EventArgs e)
 		{
-			var a = cn.Register("admintest", "paulosmantziaris@gmail.com","35364546");
+			var a = cn.ResentActivationKey("paulosmantziaris@gmail.com");
 		}
 		
 	}

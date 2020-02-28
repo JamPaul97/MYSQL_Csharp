@@ -137,6 +137,24 @@ namespace LoginSystem
 			var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 			return JsonConvert.DeserializeObject<ActivateAccountResponse>(responseString);
 		}
+		public ResendActivationKeyResponse ResentActivationKey(string email)
+		{
+			var request = (HttpWebRequest)WebRequest.Create(this.Server + "resentActivationKey.php");
+			var postData = "email=" + Uri.EscapeDataString(email);
+			postData += "&emailSubject=" + this.emailSubject;
+			postData += "&emailMessage=" + this.emailMessage;
+			var data = Encoding.ASCII.GetBytes(postData);
+			request.Method = "POST";
+			request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentLength = data.Length;
+
+			using (var stream = request.GetRequestStream())
+				stream.Write(data, 0, data.Length);
+			var response = (HttpWebResponse)request.GetResponse();
+
+			var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+			return JsonConvert.DeserializeObject<ResendActivationKeyResponse>(responseString);
+		}
 
 	}
 

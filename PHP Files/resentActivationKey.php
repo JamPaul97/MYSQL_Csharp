@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else
     {
-        $emailMessage = str_replace("activation_key_placeholder",$activation_key,$emailMessage);
+        $emailMessage = str_replace("activation_key_placeholder",$user[6],$emailMessage);
         mail ( $email , $emailSubject , $emailMessage );
         $jsonResponse = array(
             "Email"=>$email, 
