@@ -32,5 +32,24 @@ namespace Tests
 		{
 
 		}
+
+		private void Btn_login_Click(object sender, EventArgs e)
+		{
+			var response = cn.Login(username_txt.Text, password_txt.Text);
+			if(response.Successful)
+			{
+				this.Text = response.Coockie;
+				this.Refresh();
+			}
+			else
+			{
+				MetroFramework.MetroMessageBox.Show(this, response.Message);
+			}
+		}
+
+		private void Btn_register_Click(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }

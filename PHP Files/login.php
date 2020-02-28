@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rows = mysqli_num_rows($result);
     if($rows==1){
         //login done
-        $query = "UPDATE users SET coockie='$coockie' WHERE username = 'test1'";
+        $query = "UPDATE users SET coockie='$coockie' WHERE username ='$username'";
         $result = mysqli_query($con,$query) or die(mysql_error());
         $jsonResponse = array(
             "Username"=>$username, 

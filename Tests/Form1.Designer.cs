@@ -31,9 +31,9 @@
 			this.btn_login = new MetroFramework.Controls.MetroButton();
 			this.username_txt = new MetroFramework.Controls.MetroTextBox();
 			this.metroTile1 = new MetroFramework.Controls.MetroTile();
-			this.password_txt = new MetroFramework.Controls.MetroTile();
+			this.tile = new MetroFramework.Controls.MetroTile();
 			this.btn_register = new MetroFramework.Controls.MetroButton();
-			this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+			this.password_txt = new MetroFramework.Controls.MetroTextBox();
 			this.SuspendLayout();
 			// 
 			// btn_login
@@ -46,6 +46,7 @@
 			this.btn_login.Text = "Login";
 			this.btn_login.Theme = MetroFramework.MetroThemeStyle.Dark;
 			this.btn_login.UseSelectable = true;
+			this.btn_login.Click += new System.EventHandler(this.Btn_login_Click);
 			// 
 			// username_txt
 			// 
@@ -85,18 +86,24 @@
 			this.metroTile1.Size = new System.Drawing.Size(515, 79);
 			this.metroTile1.TabIndex = 2;
 			this.metroTile1.Text = "Username";
+			this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
 			this.metroTile1.UseSelectable = true;
 			// 
-			// password_txt
+			// tile
 			// 
-			this.password_txt.ActiveControl = null;
-			this.password_txt.Location = new System.Drawing.Point(176, 182);
-			this.password_txt.Name = "password_txt";
-			this.password_txt.Size = new System.Drawing.Size(515, 79);
-			this.password_txt.Style = MetroFramework.MetroColorStyle.Green;
-			this.password_txt.TabIndex = 3;
-			this.password_txt.Text = "Password";
-			this.password_txt.UseSelectable = true;
+			this.tile.ActiveControl = null;
+			this.tile.Location = new System.Drawing.Point(176, 182);
+			this.tile.Name = "tile";
+			this.tile.Size = new System.Drawing.Size(515, 79);
+			this.tile.Style = MetroFramework.MetroColorStyle.Green;
+			this.tile.TabIndex = 3;
+			this.tile.Text = "Password";
+			this.tile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.tile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.tile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+			this.tile.UseSelectable = true;
 			// 
 			// btn_register
 			// 
@@ -108,45 +115,47 @@
 			this.btn_register.Text = "Register";
 			this.btn_register.Theme = MetroFramework.MetroThemeStyle.Dark;
 			this.btn_register.UseSelectable = true;
+			this.btn_register.Click += new System.EventHandler(this.Btn_register_Click);
 			// 
-			// metroTextBox1
+			// password_txt
 			// 
 			// 
 			// 
 			// 
-			this.metroTextBox1.CustomButton.Image = null;
-			this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(206, 1);
-			this.metroTextBox1.CustomButton.Name = "";
-			this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-			this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-			this.metroTextBox1.CustomButton.TabIndex = 1;
-			this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-			this.metroTextBox1.CustomButton.UseSelectable = true;
-			this.metroTextBox1.CustomButton.Visible = false;
-			this.metroTextBox1.Lines = new string[0];
-			this.metroTextBox1.Location = new System.Drawing.Point(317, 214);
-			this.metroTextBox1.MaxLength = 32767;
-			this.metroTextBox1.Name = "metroTextBox1";
-			this.metroTextBox1.PasswordChar = '\0';
-			this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-			this.metroTextBox1.SelectedText = "";
-			this.metroTextBox1.SelectionLength = 0;
-			this.metroTextBox1.SelectionStart = 0;
-			this.metroTextBox1.ShortcutsEnabled = true;
-			this.metroTextBox1.Size = new System.Drawing.Size(228, 23);
-			this.metroTextBox1.TabIndex = 5;
-			this.metroTextBox1.UseSelectable = true;
-			this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-			this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+			this.password_txt.CustomButton.Image = null;
+			this.password_txt.CustomButton.Location = new System.Drawing.Point(206, 1);
+			this.password_txt.CustomButton.Name = "";
+			this.password_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+			this.password_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+			this.password_txt.CustomButton.TabIndex = 1;
+			this.password_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+			this.password_txt.CustomButton.UseSelectable = true;
+			this.password_txt.CustomButton.Visible = false;
+			this.password_txt.Lines = new string[0];
+			this.password_txt.Location = new System.Drawing.Point(317, 214);
+			this.password_txt.MaxLength = 32767;
+			this.password_txt.Name = "password_txt";
+			this.password_txt.PasswordChar = '*';
+			this.password_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+			this.password_txt.SelectedText = "";
+			this.password_txt.SelectionLength = 0;
+			this.password_txt.SelectionStart = 0;
+			this.password_txt.ShortcutsEnabled = true;
+			this.password_txt.ShowClearButton = true;
+			this.password_txt.Size = new System.Drawing.Size(228, 23);
+			this.password_txt.TabIndex = 5;
+			this.password_txt.UseSelectable = true;
+			this.password_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+			this.password_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(873, 385);
-			this.Controls.Add(this.metroTextBox1);
-			this.Controls.Add(this.btn_register);
 			this.Controls.Add(this.password_txt);
+			this.Controls.Add(this.btn_register);
+			this.Controls.Add(this.tile);
 			this.Controls.Add(this.username_txt);
 			this.Controls.Add(this.metroTile1);
 			this.Controls.Add(this.btn_login);
@@ -162,9 +171,9 @@
 		private MetroFramework.Controls.MetroButton btn_login;
 		private MetroFramework.Controls.MetroTextBox username_txt;
 		private MetroFramework.Controls.MetroTile metroTile1;
-		private MetroFramework.Controls.MetroTile password_txt;
+		private MetroFramework.Controls.MetroTile tile;
 		private MetroFramework.Controls.MetroButton btn_register;
-		private MetroFramework.Controls.MetroTextBox metroTextBox1;
+		private MetroFramework.Controls.MetroTextBox password_txt;
 	}
 }
 
