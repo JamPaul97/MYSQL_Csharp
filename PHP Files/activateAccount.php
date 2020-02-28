@@ -1,8 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require('db.php');
-    
-    //gather post info
     $email = $_POST['email'];
     $activationKey = $_POST['activationKey'];
     $query = "SELECT * FROM `users` WHERE email='$email'";
