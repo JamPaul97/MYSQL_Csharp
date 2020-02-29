@@ -18,6 +18,7 @@ namespace LoginSystem
 		private string RefreshLoginURL			= "refreshLogin.php";
 		private string ActivateAccountURL		= "activateAccount.php";
 		private string ResentActivationKeyURL	= "resentActivationKey.php";
+		private string UpdateUserDataURL = "updateData.php";
 		/// <summary>
 		/// Change the Change Password .php name
 		/// </summary>
@@ -66,6 +67,11 @@ namespace LoginSystem
 			get { return this.ResentActivationKeyURL; }
 			set { this.ResentActivationKeyURL = value; }
 		}
+		public string UpdateUserDataPage
+		{
+			get { return this.UpdateUserDataURL; }
+			set { this.UpdateUserDataURL = value; }
+		}
 		/// <summary>
 		/// Change the main Body of the Activation Email. IMPORTANT***This message must contains 'activation_key_placeholder' keyword somewhere.This CAN be an HTML String. Note all the 'activation_key_placeholder' keywords will be replaced with the activation key upon sending.
 		/// </summary>
@@ -89,6 +95,8 @@ namespace LoginSystem
 			get { return this.emailSubject; }
 			set { this.emailSubject = value; }
 		}
+
+
 
 
 		/// <summary>
@@ -274,6 +282,23 @@ namespace LoginSystem
 			var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
 			return JsonConvert.DeserializeObject<ResendActivationKeyResponse>(responseString);
 		}
+
+		public void UpdateUserData(string Username,dynamic _data)
+		{
+			var request = (HttpWebRequest)WebRequest.Create(this.Server + UpdateUserDataPage);
+			var postData = JsonConvert.SerializeObject(_data);
+			var data = Encoding.ASCII.GetBytes(postData);
+			request.Method = "POST";
+			request.ContentType = "application/json";
+			request.ContentLength = data.Length;
+
+			using (var stream = request.GetRequestStream())
+				stream.Write(data, 0, data.Length);
+			var response = (HttpWebResponse)request.GetResponse();
+
+			var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+		}
+
 
 	}
 

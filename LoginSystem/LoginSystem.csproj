@@ -52,6 +52,8 @@
     <Compile Include="RefreshResponse.cs" />
     <Compile Include="RegisterResponse.cs" />
     <Compile Include="ResendActivationKeyResponse.cs" />
+    <Compile Include="UpdateDataObject.cs" />
+    <Compile Include="UpdateDataResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
